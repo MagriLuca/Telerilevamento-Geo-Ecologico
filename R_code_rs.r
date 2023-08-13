@@ -3,7 +3,7 @@
 # install.packages("raster")
 library(raster)
 
-#Comando per selezionare la cartella di lavoro in Windows
+# Comando per selezionare la cartella di lavoro in Windows
 setwd("C:/lab/")
 
 # Importo immagine da cartella personale
@@ -21,3 +21,33 @@ cl <- colorRampPalette(c("black","grey","light grey")) (100)
 # Plot nuovo con legenda aggiornata da nero a bianco
 plot(l2011, col=cl)
 
+# Landsat ETM+
+# b1 = Blu
+# b2 = Verde
+# b3 = Rosso
+# b4 = Infrarosso vicino (NIR)
+
+# Plot della singola banda del blu
+
+# Prima modalità (con dollaro)
+plot(l2011$B1_sre)
+
+# Seconda modalità (doppia parentesi quadra)
+plot(l2011[[1]])
+
+# Cambio della legenda come precedentemente fatto
+plot(l2011$B1_sre, col=cl)
+
+# Plot adoperando una scala di colori di blu
+clb <- colorRampPalette(c("dark blue","blue","light blue")) (100)
+plot(l2011$B1_sre, col=clb)
+
+# Esportazione immagine (pdf) nella cartella lab
+pdf("Banda1.pdf")
+plot(l2011$B1_sre, col=clb)
+dev.off()
+
+# Esportazione immagine (png) nella cartella lab
+png("Banda1.png")
+plot(l2011$B1_sre, col=clb)
+dev.off()
