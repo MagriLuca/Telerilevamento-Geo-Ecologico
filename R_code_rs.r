@@ -75,3 +75,28 @@ plot(l2011$B1_sre, col=clb)
 plot(l2011$B2_sre, col=clg)
 dev.off()
 
+# Costruzione di un multiframe con blu, verde, rosso e NIR
+par(mfrow=c(2,2))
+# Processo per blu
+plot(l2011$B1_sre, col=clb)
+# Processo per verde
+plot(l2011$B2_sre, col=clg)
+# Processo per rosso
+clr <- colorRampPalette(c("dark red","red","pink")) (100)
+plot(l2011$B3_sre, col=clr)
+# Processo per NIR
+clnir <- colorRampPalette(c("red","orange","yellow")) (100)
+plot(l2011$B4_sre, col=clnir)
+dev.off()
+
+# Plot dell'immagine l2011 nella banda NIR
+plot(l2011$B4_sre, col=clnir)
+# In alternativa
+plot(l2011[[4]], col=clnir)
+
+# Plot RGB layers ("A colori naturali")
+plotRGB(l2011, r=3, g=2, b=1, stretch="lin")
+
+# Plot RGB layers (con infrarosso a discapito di blu)
+plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
+plotRGB(l2011, r=3, g=4, b=2, stretch="lin")
