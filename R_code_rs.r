@@ -51,3 +51,27 @@ dev.off()
 png("Banda1.png")
 plot(l2011$B1_sre, col=clb)
 dev.off()
+
+# Plot adoperando una scala di colori di verde
+clg <- colorRampPalette(c("dark green","green","light green")) (100)
+plot(l2011$B2_sre, col=clg)
+
+# Costruzione di un multiframe con blu e verde
+par(mfrow=c(1,2))
+plot(l2011$B1_sre, col=clb)
+plot(l2011$B2_sre, col=clg)
+dev.off()
+
+# Esportazione di un multiframe con blu e verde
+pdf("multiframe.pdf")
+par(mfrow=c(1,2))
+plot(l2011$B1_sre, col=clb)
+plot(l2011$B2_sre, col=clg)
+dev.off()
+
+# Inversione del multiframe precedente
+par(mfrow=c(2,1))
+plot(l2011$B1_sre, col=clb)
+plot(l2011$B2_sre, col=clg)
+dev.off()
+
