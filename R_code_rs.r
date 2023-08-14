@@ -98,5 +98,27 @@ plot(l2011[[4]], col=clnir)
 plotRGB(l2011, r=3, g=2, b=1, stretch="lin")
 
 # Plot RGB layers (con infrarosso a discapito di blu)
-plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
 plotRGB(l2011, r=3, g=4, b=2, stretch="lin")
+plotRGB(l2011, r=3, g=2, b=4, stretch="lin")
+
+# Plot RGB layers (con stretch ad istogramma)
+plotRGB(l2011, r=3, g=4, b=2, stretch="hist")
+
+# Costruzione multiframe con colori naturali e falsi colori
+par(mfrow=c(2,1))
+plotRGB(l2011, r=3, g=2, b=1, stretch="lin")
+plotRGB(l2011, r=3, g=4, b=2, stretch="hist")
+dev.off()
+
+# Importo immagine del 1988 della stessa area
+l1988 <- brick("p224r63_1988.grd")
+
+# Richiamo l'oggetto ed osservo le proprietà
+l1988
+
+# Costruzione di un multiframe del 1988 e 2011
+par(mfrow=c(2,1))
+plotRGB(l1988, r=4, g=3, b=2, stretch="lin")
+plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
+dev.off()
+
