@@ -1,4 +1,4 @@
-# 1) Analisi multitemporale della LST della Groenlandia
+# 1) Analisi multitemporale della LST della Groenlandia.
 
 library(raster)
 library(rasterVis)
@@ -42,7 +42,7 @@ plotRGB(tgr, r=1, g=2, b=3, stretch="lin")
 levelplot(tgr,col.regions=cl, main="LST variation in time",
           names.attr=c("July 2000","July 2005", "July 2010", "July 2015")
 
-# 2) Osservazione decrescita del NO2 durante il lockdown
+# 2) Osservazione decrescita del NO2 durante il lockdown.
 
 library(raster)
 
