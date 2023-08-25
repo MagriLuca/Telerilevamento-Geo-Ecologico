@@ -1,9 +1,9 @@
-# Questo è il primo script che è stato adoperato a lezione
+# Primo script sul Remote Sensing
 
 # install.packages("raster")
 library(raster)
 
-# Comando per selezionare la cartella di lavoro in Windows
+# Comando per selezionare cartella di lavoro in Windows
 setwd("C:/lab/")
 
 # Importo immagine da cartella personale
@@ -12,7 +12,7 @@ l2011 <- brick("p224r63_2011.grd")
 # Richiamo l'oggetto ed osservo le proprietà
 l2011
 
-# Plot del file prima richiamato
+# Plot semplice del file prima richiamato
 plot(l2011)
 
 # Modifico i colori della legenda per accessibilità
@@ -20,6 +20,7 @@ cl <- colorRampPalette(c("black","grey","light grey")) (100)
 
 # Plot nuovo con legenda aggiornata da nero a bianco
 plot(l2011, col=cl)
+dev.off()
 
 # Landsat ETM+
 # b1 = Blu
@@ -29,7 +30,7 @@ plot(l2011, col=cl)
 
 # Plot della singola banda del blu
 
-# Prima modalità (con dollaro)
+# Prima modalità (con il dollaro)
 plot(l2011$B1_sre)
 
 # Seconda modalità (doppia parentesi quadra)
@@ -41,6 +42,7 @@ plot(l2011$B1_sre, col=cl)
 # Plot adoperando una scala di colori di blu
 clb <- colorRampPalette(c("dark blue","blue","light blue")) (100)
 plot(l2011$B1_sre, col=clb)
+dev.off()
 
 # Esportazione immagine (pdf) nella cartella lab
 pdf("Banda1.pdf")
@@ -121,5 +123,3 @@ par(mfrow=c(2,1))
 plotRGB(l1988, r=4, g=3, b=2, stretch="lin")
 plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
 dev.off()
-
-# Fine
