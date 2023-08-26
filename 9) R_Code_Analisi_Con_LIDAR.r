@@ -8,14 +8,14 @@ library(ggplot2)
 setwd("C:/lab/")
 
 # Caricare il file DSM 2013
-dsm_2013 <- raster(2013Elevation_DigitalElevationModel-0.5m.tif")
+dsm_2013 <- raster("2013Elevation_DigitalElevationModel-0.5m.tif")
 dsm_2013
 
 # Plot del file DSM 2013
 plot(dsm_2013, main="Lidar Digital Surface Model San Genesio/Jenesien")
 
 # Caricare il file DTM 2013
-dtm_2013 <- raster(2013Elevation_DigitalTerrainModel-0.5m.tif")
+dtm_2013 <- raster("2013Elevation_DigitalTerrainModel-0.5m.tif")
 
 # Plot del file DTM 2013
 plot(dtm_2013, main="Lidar Digital Terrain Model San Genesio/Jenesien")
@@ -35,14 +35,14 @@ ggplot() +
 writeRaster(chm_2013,"chm_2013_San_genesio.tif")
 
 # Caricare il file DSM 2004
-dsm_2004 <- raster(2004Elevation_DigitalElevationModel-2.5m.tif")
+dsm_2004 <- raster("2004Elevation_DigitalElevationModel-2.5m.tif")
 dsm_2004
 
 # Plot del file DSM 2004
 plot(dsm_2004, main="Lidar Digital Surface Model San Genesio/Jenesien")
 
 # Caricare il file DTM 2004
-dtm_2004 <- raster(2004Elevation_DigitalTerrainModel-2.5m.tif")
+dtm_2004 <- raster("2004Elevation_DigitalTerrainModel-2.5m.tif")
 
 # Plot del file DTM 2004
 plot(dtm_2004, main="Lidar Digital Terrain Model San Genesio/Jenesien")
@@ -84,7 +84,7 @@ writeRaster(difference,"difference chm San_genesio.tif")
 library(lidR)
 
 # load point cloud
-point_cloud<-readLAS(LIDAR-PointCloudCoverage-2013SolarTirol.laz")
+point_cloud<-readLAS("LIDAR-PointCloudCoverage-2013SolarTirol.laz")
 
 #plot r3 point cloud
 plot(point_cloud)
