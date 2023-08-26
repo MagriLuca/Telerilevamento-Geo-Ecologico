@@ -1,4 +1,4 @@
-# Species Distribution Modelling
+# Script per utilizzo di SDM (Species Distribution Modelling)
 
 library(sdm)
 library(raster)
@@ -6,35 +6,33 @@ library(rgdal)
 
 file <- system.file("external/species.shp", package="sdm")
 species <- shapefile(file)
-
-# looking at the set
 species
 
-# plot
+# Plot del file creato
 plot(species)
 
-# looking at the occurrences
+# Controllo informazioni riguardo alle "occorrenze"
 species$Occurrence
 
-# copy and then write:
+# Utilizzo funzione points per l'aggiunta di altri punti
 plot(species[species$Occurrence == 1,],col='blue',pch=16)
 points(species[species$Occurrence == 0,],col='red',pch=16)
 
-# predictors: look at the path
+# Sezione dedicata ai "predittori"
 path <- system.file("external", package="sdm")
 
-# list the predictors
+# Creazione di una lista dei "predittori"
 lst <- list.files(path=path,pattern='asc$',full.names = T) #
 lst
 
-# stack
+# Operazione di stack
 preds <- stack(lst)
 
-# plot preds
+# Plot dei "predittori"
 cl <- colorRampPalette(c('blue','orange','red','yellow')) (100)
 plot(preds, col=cl)
 
-# plot predictors and occurrences
+# Plot dei "predittori" e delle "occorrenze"
 plot(preds$elevation, col=cl)
 points(species[species$Occurrence == 1,], pch=16)
 
@@ -47,28 +45,21 @@ points(species[species$Occurrence == 1,], pch=16)
 plot(preds$vegetation, col=cl)
 points(species[species$Occurrence == 1,], pch=16)
 
-# model
+# Sezione dedicata alla costruzione del modello
 
-# set the data for the sdm
+# Set dei dati per il pacchetto sdm
 datasdm <- sdmData(train=species, predictors=preds)
 
-# model
+# Modello
 m1 <- sdm(Occurrence ~ elevation + precipitation + temperature + vegetation, data=datasdm, methods = "glm")
 
-# make the raster output layer
+# Costruzione del raster output layer
 p1 <- predict(m1, newdata=preds)
 
-# plot the output
+# Plot dell'output creato
 plot(p1, col=cl)
 points(species[species$Occurrence == 1,], pch=16)
 
-# add to the stack
+# Aggiunta di quest'ultimo allo stack
 s1 <- stack(preds,p1)
-plot(s1, col=cl)
-
-# Do you want to change names in the plot of the stack?
-# Here your are!:
-# choose a vector of names for the stack, looking at the previous graph, qhich are:
-names(s1) <- c('elevation', 'precipitation', 'temperature', 'vegetation', 'model')
-# and then replot!:
 plot(s1, col=cl)
