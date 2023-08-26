@@ -1,4 +1,4 @@
-# Script per lavorare con dati LIDAR
+# Script per lavorare con dati LIDAR.
 
 library(raster)
 library(rgdal)
@@ -83,8 +83,8 @@ writeRaster(difference,"difference chm San_genesio.tif")
 
 library(lidR)
 
-# load point cloud
+# Load point cloud
 point_cloud<-readLAS("LIDAR-PointCloudCoverage-2013SolarTirol.laz")
 
-#plot r3 point cloud
+# Plot r3 point cloud
 plot(point_cloud)
