@@ -1,4 +1,4 @@
-# Script per il calcolo della variabilità.
+# Script per il calcolo della variabilità
 
 library(raster)
 library(RStoolbox)
