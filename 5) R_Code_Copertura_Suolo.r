@@ -1,4 +1,4 @@
-# Script per analisi copertura del suolo.
+# Script per analisi copertura del suolo
 
 library(raster)
 library(ggplot2)
