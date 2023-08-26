@@ -1,4 +1,4 @@
-# Script per lavorare con dati LIDAR
+# Script per lavorare con dati LIDAR.
 
 library(raster)
 library(rgdal)
