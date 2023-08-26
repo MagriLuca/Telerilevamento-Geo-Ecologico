@@ -1,4 +1,4 @@
-# Primo script sul Remote Sensing.
+# Primo script sul Remote Sensing
 
 # install.packages("raster")
 library(raster)
