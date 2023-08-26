@@ -1,4 +1,4 @@
-# Script per utilizzo di SDM (Species Distribution Modelling)
+# Script per utilizzo di SDM (Species Distribution Modelling).
 
 library(sdm)
 library(raster)
