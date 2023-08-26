@@ -1,4 +1,4 @@
-# Secondo codice per definizione degli Indici Spettrali.
+# Secondo codice per definizione degli Indici Spettrali
 
 library(raster)
 library(RStoolbox)
