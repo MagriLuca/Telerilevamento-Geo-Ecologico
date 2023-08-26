@@ -1,4 +1,4 @@
-# 1) Script per il processo di classificazione su immagine solare.
+# 1) Script per il processo di classificazione su immagine solare
 
 library(raster)
 library(RStoolbox)
@@ -29,7 +29,7 @@ soclass <- setValues(so[[1]], kcluster$cluster)
 cl <- colorRampPalette(c('yellow','black','red'))(100)
 plot(soclass, col=cl)
 
-# 2) Script per il processo di classificazione su immagine canyon.
+# 2) Script per il processo di classificazione su immagine canyon
 
 gc <- brick("dolansprings_oli_2013088_canyon_lrg.jpg")
 gc
