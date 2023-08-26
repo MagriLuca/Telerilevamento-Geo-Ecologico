@@ -1,4 +1,4 @@
-# Script di una analisi multivariata.
+# Script di una analisi multivariata
 
 library(raster)
 library(ggplot2)
