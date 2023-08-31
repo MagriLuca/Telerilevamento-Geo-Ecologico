@@ -226,6 +226,10 @@ tiff("StackEst2023.tiff")
 plotRGB(StackEst2023, 4, 2, 1, stretch="Lin")
 dev.off()
 
+# I file generati sono stati ritagliati utilizzando il software QGis:
+# Ciascuna immagine è stata caricata e ritagliata con un poligono;
+# Tutti gli output risultanti sono stati indicati con la sigla "Cut".
+
 # Classificazione per Analisi della Copertura dei Suoli, sezione Ovest
 
 Palette2 <- colorRampPalette(c('dark green','black','yellow'))(100)
@@ -388,11 +392,11 @@ Percentuali
 
 CoperturaSuolo <- c("Foresta", "Agricoltura")
 
-PercentualeOvest1987 <- c(  )
-PercentualeOvest1996 <- c(  )
-PercentualeOvest2005 <- c(  )
-PercentualeOvest2014 <- c(  )
-PercentualeOvest2023 <- c(  )
+PercentualeOvest1987 <- c(89.42, 10.58)
+PercentualeOvest1996 <- c(87.61, 12.39)
+PercentualeOvest2005 <- c(66.26, 33.74)
+PercentualeOvest2014 <- c(66.18, 33.82)
+PercentualeOvest2023 <- c(54.51, 45.49)
 
 PercentualiOvest <- data.frame(CoperturaSuolo, PercentualeOvest1987, 
                                PercentualeOvest1996, PercentualeOvest2005, 
@@ -400,11 +404,11 @@ PercentualiOvest <- data.frame(CoperturaSuolo, PercentualeOvest1987,
 
 # Costruzione di un Dataframe per la Sezione Centrale
 
-PercentualeCentrale1987 <- c(  )
-PercentualeCentrale1996 <- c(  )
-PercentualeCentrale2005 <- c(  )
-PercentualeCentrale2014 <- c(  )
-PercentualeCentrale2023 <- c(  )
+PercentualeCentrale1987 <- c(94.24, 5.76)
+PercentualeCentrale1996 <- c(90.81, 9.19)
+PercentualeCentrale2005 <- c(76.05, 23.95)
+PercentualeCentrale2014 <- c(74.15, 25.85)
+PercentualeCentrale2023 <- c(69.14, 30.86)
 
 PercentualiOvest <- data.frame(CoperturaSuolo, PercentualeCentrale1987, 
                                PercentualeCentrale1996, PercentualeCentrale2005, 
@@ -412,16 +416,13 @@ PercentualiOvest <- data.frame(CoperturaSuolo, PercentualeCentrale1987,
 
 # Costruzione di un Dataframe per la Sezione Est
 
-PercentualeEst1987 <- c(  )
-PercentualeEst1996 <- c(  )
-PercentualeEst2005 <- c(  )
-PercentualeEst2014 <- c(  )
-PercentualeEst2023 <- c(  )
+PercentualeEst1987 <- c(73.07, 26.93)
+PercentualeEst1996 <- c(62.08, 37.92)
+PercentualeEst2005 <- c(48.74, 51.26)
+PercentualeEst2014 <- c(46.87, 53.13)
+PercentualeEst2023 <- c(43.91, 56.09)
 
 PercentualiOvest <- data.frame(CoperturaSuolo, PercentualeEst1987, 
                                PercentualeEst1996, PercentualeEst2005, 
                                PercentualeEst2014, PercentualeEst2023)
 
-# Cosa Manca?
-# Diagramma x-y indicante il trend di deforestazione
-# Mappatura LST - Consulta Script Copernicus
