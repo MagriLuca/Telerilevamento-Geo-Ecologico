@@ -228,52 +228,57 @@ dev.off()
 
 # Classificazione per Analisi della Copertura dei Suoli, sezione Ovest
 
-Palette1 <- colorRampPalette(c('dark green','black','yellow'))(100)
+Palette2 <- colorRampPalette(c('dark green','black','yellow'))(100)
 
 Ovest1987Cut <- brick("StackOvest1987Cut.tiff")
 SingleValuesOvest1987 <- getValues(Ovest1987Cut)
 kclusterOvest1987 <- kmeans(SingleValuesOvest1987, centers = 2)
 Ovest1987Class <- setValues(Ovest1987Cut[[1]], kclusterOvest1987$cluster)
-plot(Ovest1987Class, col=Palette1)
+plot(Ovest1987Class, col=Palette2)
 Frequenze <- freq(Ovest1987Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Ovest1996Cut <- brick("StackOvest1996Cut.tiff")
 SingleValuesOvest1996 <- getValues(Ovest1996Cut)
 kclusterOvest1996 <- kmeans(SingleValuesOvest1996, centers = 2)
 Ovest1996Class <- setValues(Ovest1996Cut[[1]], kclusterOvest1996$cluster)
-plot(Ovest1996Class, col=Palette1)
+plot(Ovest1996Class, col=Palette2)
 Frequenze <- freq(Ovest1996Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Ovest2005Cut <- brick("StackOvest2005Cut.tiff")
 SingleValuesOvest2005 <- getValues(Ovest2005Cut)
 kclusterOvest2005 <- kmeans(SingleValuesOvest2005, centers = 2)
 Ovest2005Class <- setValues(Ovest2005Cut[[1]], kclusterOvest2005$cluster)
-plot(Ovest2005Class, col=Palette1)
+plot(Ovest2005Class, col=Palette2)
 Frequenze <- freq(Ovest2005Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Ovest2014Cut <- brick("StackOvest2014Cut.tiff")
 SingleValuesOvest2014 <- getValues(Ovest2014Cut)
 kclusterOvest2014 <- kmeans(SingleValuesOvest2014, centers = 2)
 Ovest2014Class <- setValues(Ovest2014Cut[[1]], kclusterOvest2014$cluster)
-plot(Ovest2014Class, col=Palette1)
+plot(Ovest2014Class, col=Palette2)
 Frequenze <- freq(Ovest2014Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Ovest2023Cut <- brick("StackOvest2023Cut.tiff")
 SingleValuesOvest2023 <- getValues(Ovest2023Cut)
 kclusterOvest2023 <- kmeans(SingleValuesOvest2023, centers = 2)
 Ovest2023Class <- setValues(Ovest2023Cut[[1]], kclusterOvest2023$cluster)
-plot(Ovest2023Class, col=Palette1)
+plot(Ovest2023Class, col=Palette2)
 Frequenze <- freq(Ovest2023Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 # Classificazione per Analisi della Copertura dei Suoli, sezione Centrale
 
@@ -281,46 +286,51 @@ Centrale1987Cut <- brick("StackCentrale1987Cut.tiff")
 SingleValuesCentrale1987 <- getValues(Centrale1987Cut)
 kclusterCentrale1987 <- kmeans(SingleValuesCentrale1987, centers = 2)
 Centrale1987Class <- setValues(Centrale1987Cut[[1]], kclusterCentrale1987$cluster)
-plot(Centrale1987Class, col=Palette1)
+plot(Centrale1987Class, col=Palette2)
 Frequenze <- freq(Centrale1987Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Centrale1996Cut <- brick("StackCentrale1996Cut.tiff")
 SingleValuesCentrale1996 <- getValues(Centrale1996Cut)
 kclusterCentrale1996 <- kmeans(SingleValuesCentrale1996, centers = 2)
 Centrale1996Class <- setValues(Centrale1996Cut[[1]], kclusterCentrale1996$cluster)
-plot(Centrale1996Class, col=Palette1)
+plot(Centrale1996Class, col=Palette2)
 Frequenze <- freq(Centrale1996Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Centrale2005Cut <- brick("StackCentrale2005Cut.tiff")
 SingleValuesCentrale2005 <- getValues(Centrale2005Cut)
 kclusterCentrale2005 <- kmeans(SingleValuesCentrale2005, centers = 2)
 Centrale2005Class <- setValues(Centrale2005Cut[[1]], kclusterCentrale2005$cluster)
-plot(Centrale2005Class, col=Palette1)
+plot(Centrale2005Class, col=Palette2)
 Frequenze <- freq(Centrale2005Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Centrale2014Cut <- brick("StackCentrale2014Cut.tiff")
 SingleValuesCentrale2014 <- getValues(Centrale2014Cut)
 kclusterCentrale2014 <- kmeans(SingleValuesCentrale2014, centers = 2)
 Centrale2014Class <- setValues(Centrale2014Cut[[1]], kclusterCentrale2014$cluster)
-plot(Centrale2014Class, col=Palette1)
+plot(Centrale2014Class, col=Palette2)
 Frequenze <- freq(Centrale2014Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Centrale2023Cut <- brick("StackCentrale2023Cut.tiff")
 SingleValuesCentrale2023 <- getValues(Centrale2023Cut)
 kclusterCentrale2023 <- kmeans(SingleValuesCentrale2023, centers = 2)
 Centrale2023Class <- setValues(Centrale2023Cut[[1]], kclusterCentrale2023$cluster)
-plot(Centrale2023Class, col=Palette1)
+plot(Centrale2023Class, col=Palette2)
 Frequenze <- freq(Centrale2023Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 # Classificazione per Analisi della Copertura dei Suoli, sezione Est
 
@@ -328,46 +338,51 @@ Est1987Cut <- brick("StackEst1987Cut.tiff")
 SingleValuesEst1987 <- getValues(Est1987Cut)
 kclusterEst1987 <- kmeans(SingleValuesEst1987, centers = 2)
 Est1987Class <- setValues(Est1987Cut[[1]], kclusterEst1987$cluster)
-plot(Est1987Class, col=Palette1)
+plot(Est1987Class, col=Palette2)
 Frequenze <- freq(Est1987Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Est1996Cut <- brick("StackEst1996Cut.tiff")
 SingleValuesEst1996 <- getValues(Est1996Cut)
 kclusterEst1996 <- kmeans(SingleValuesEst1996, centers = 2)
 Est1996Class <- setValues(Est1996Cut[[1]], kclusterEst1996$cluster)
-plot(Est1996Class, col=Palette1)
+plot(Est1996Class, col=Palette2)
 Frequenze <- freq(Est1996Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Est2005Cut <- brick("StackEst2005Cut.tiff")
 SingleValuesEst2005 <- getValues(Est2005Cut)
 kclusterEst2005 <- kmeans(SingleValuesEst2005, centers = 2)
 Est2005Class <- setValues(Est2005Cut[[1]], kclusterEst2005$cluster)
-plot(Est2005Class, col=Palette1)
+plot(Est2005Class, col=Palette2)
 Frequenze <- freq(Est2005Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Est2014Cut <- brick("StackEst2014Cut.tiff")
 SingleValuesEst2014 <- getValues(Est2014Cut)
 kclusterEst2014 <- kmeans(SingleValuesEst2014, centers = 2)
 Est2014Class <- setValues(Est2014Cut[[1]], kclusterEst2014$cluster)
-plot(Est2014Class, col=Palette1)
+plot(Est2014Class, col=Palette2)
 Frequenze <- freq(Est2014Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 Est2023Cut <- brick("StackEst2023Cut.tiff")
 SingleValuesEst2023 <- getValues(Est2023Cut)
 kclusterEst2023 <- kmeans(SingleValuesEst2023, centers = 2)
 Est2023Class <- setValues(Est2023Cut[[1]], kclusterEst2023$cluster)
-plot(Est2023Class, col=Palette1)
+plot(Est2023Class, col=Palette2)
 Frequenze <- freq(Est2023Class)
 Totale = Frequenze[[1,2]] + Frequenze[[2,2]]
 Percentuali = Frequenze * 100 / Totale
+Percentuali
 
 # Costruzione di un Dataframe per la Sezione Ovest
 
