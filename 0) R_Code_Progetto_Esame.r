@@ -136,6 +136,9 @@ StackEst2023 <- stack(ImportEst2023)
 # Definizione INDICE NDVI ------> (NIR - RED) / (NIR + RED);
 # DIF. 1987-2023 ---> Evidenzia impatto della deforestazione.
 
+# Impostazione definitiva della cartella di lavoro:
+setwd("C:/Telerilevamento/Elaborati")
+
 # Sezione Ovest: DVI, NDVI e differenze per gli stack 1987 e 2023.
 
 Palette1 = colorRampPalette(c('blue','white','red'))(100)
@@ -222,9 +225,6 @@ dev.off()
 # Le immagini sono rappresentative per le 5 diverse annate.
 # I prodotti verranno usati nella seguente classificazione.
 # Ciascun output è un RGB (R = NIR, G = Verde, B = Blu).
-
-# Impostazione definitiva della cartella di lavoro:
-setwd("C:/Telerilevamento/Elaborati")
 
 # Sezione Ovest: Esportazione mappe (in formato .tiff).
 
@@ -514,6 +514,8 @@ PercentualiOvest <- data.frame(CoperturaSuolo, PercentualeOvest1987,
                                PercentualeOvest1996, PercentualeOvest2005, 
                                PercentualeOvest2014, PercentualeOvest2023)
 
+PercentualiOvest
+
 # Sezione Centrale: Costruzione dataframe coi trend di deforestazione.
 
 PercentualeCentrale1987 <- c(94.24, 5.76)
@@ -526,6 +528,8 @@ PercentualiCentrale <- data.frame(CoperturaSuolo, PercentualeCentrale1987,
                                   PercentualeCentrale1996, PercentualeCentrale2005, 
                                   PercentualeCentrale2014, PercentualeCentrale2023)
 
+PercentualiCentrale
+
 # Sezione Est: Costruzione dataframe coi trend di deforestazione.
 
 PercentualeEst1987 <- c(73.07, 26.93)
@@ -537,6 +541,8 @@ PercentualeEst2023 <- c(43.91, 56.09)
 PercentualiEst <- data.frame(CoperturaSuolo, PercentualeEst1987, 
                              PercentualeEst1996, PercentualeEst2005, 
                              PercentualeEst2014, PercentualeEst2023)
+
+PercentualiEst
 
 # Queste tabelle sono state costruite per l'elaborazione di grafici:
 # Essi sono stati creati adoperando un software gratuito, OpenOffice.
@@ -556,5 +562,4 @@ PercentualiEst <- data.frame(CoperturaSuolo, PercentualeEst1987,
 # deforestata, ossia un equivalente dell'Emilia-Romagna e delle Marche;
 # Si deve ricordare che le tre zone non raggiungono i 100'000 km2, cioè
 # Una briciola se viene confrontato con l'intera estensione del Brasile.
-
 # Bisognerebbe interrompere subito tale brutale azione contro la natura!
