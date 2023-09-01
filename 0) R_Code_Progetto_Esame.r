@@ -435,7 +435,7 @@ Percentuali
 # SEZIONE 6) Costruzione del dataframe sintetico per ogni zona.
 
 # Partendo dai dati raccolti nella precedente classificazione,
-# In particolare le percentuali (che danno maggiore impatto),
+# In particolare le percentuali (che danno un maggiore impatto),
 # Sorge il bisogno di raccogliere tutte le informazione numeriche:
 # Per questo motivo sono stati creati tre dataframe (uno per zona),
 # Che racchiudono tutte le coperture forestali negli anni passati.
@@ -484,7 +484,7 @@ PercentualiEst <- data.frame(CoperturaSuolo, PercentualeEst1987,
 # Ogni aspetto proposto è stato inserito nella presentazione del lavoro:
 # Anche in tale caso realizzata mediante uno strumento gratuito, LaTeX.
 
-# SEZIONE 7) Considerazioni generali dal progetto e conclusioni
+# SEZIONE 7) Considerazioni generali dal progetto e conclusioni.
 
 # Tutti i differenti plot negli anni ed i numeri estrapolati con R,
 # Hanno mostrato come la deforestazione non sia una questione da
@@ -497,4 +497,4 @@ PercentualiEst <- data.frame(CoperturaSuolo, PercentualeEst1987,
 # Si deve ricordare che le tre zone non raggiungono i 100'000 km2, cioè
 # Una briciola se viene confrontato con l'intera estensione del Brasile.
 
-# Bisognerebbe interrompere subito tale burbera azione contro la natura!
+# Bisognerebbe interrompere subito tale brutale azione contro la natura!
