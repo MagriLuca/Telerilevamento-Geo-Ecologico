@@ -497,4 +497,4 @@ PercentualiEst <- data.frame(CoperturaSuolo, PercentualeEst1987,
 # Si deve ricordare che le tre zone non raggiungono i 100'000 km2, cioè
 # Una briciola se viene confrontato con l'intera estensione del Brasile.
 
-# Bisognerebbe interrompere subito tale brutale azione contro la natura!
+# Bisognerebbe interrompere subito tale brutale azione contro la natura
