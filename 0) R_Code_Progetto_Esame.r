@@ -143,48 +143,78 @@ Palette1 = colorRampPalette(c('blue','white','red'))(100)
 DVIOvest1987 = StackOvest1987[[4]] - StackOvest1987[[3]]
 NDVIOvest1987 = DVIOvest1987 / (StackOvest1987[[4]] + 
                                 + StackOvest1987[[3]])
+
+# Esportazione del file raffigurante NDVI del 1987.
+tiff("NDVIOvest1987.tiff")
 plot(NDVIOvest1987, col=Palette1)
+dev.off()
 
 DVIOvest2023 = StackOvest2023[[4]] - StackOvest2023[[3]]
 NDVIOvest2023 = DVIOvest2023 / (StackOvest2023[[4]] + 
                                 + StackOvest2023[[3]])
-plot(NDVIOvest2023, col=Palette1)
 
-# Plot differenza tra le annate 1987 e 2023 con Palette1:
+# Esportazione del file raffigurante NDVI del 2023.
+tiff("NDVIOvest2023.tiff")
+plot(NDVIOvest2023, col=Palette1)
+dev.off()
+
+# Esportazione differenza tra le annate 1987 e 2023.
 DifferenzaDVIOvest = DVIOvest1987 - DVIOvest2023
+tiff("DifferenzaDVIOvest.tiff")
 plot(DifferenzaDVIOvest, col=Palette1)
+dev.off()
 
 # Sezione Centrale: DVI, NDVI e differenze per gli stack 1987 e 2023.
 
 DVICentrale1987 = StackCentrale1987[[4]] - StackCentrale1987[[3]]
 NDVICentrale1987 = DVICentrale1987 / (StackCentrale1987[[4]] +
                                       + StackCentrale1987[[3]])
+
+# Esportazione del file raffigurante NDVI del 1987.
+tiff("NDVICentrale1987.tiff")
 plot(NDVICentrale1987, col=Palette1)
+dev.off()
 
 DVICentrale2023 = StackCentrale2023[[4]] - StackCentrale2023[[3]]
 NDVICentrale2023 = DVICentrale2023 / (StackCentrale2023[[4]] +
                                       + StackCentrale2023[[3]])
-plot(NDVICentrale2023, col=Palette1)
 
-# Plot differenza tra le annate 1987 e 2023 con Palette1:
+# Esportazione del file raffigurante NDVI del 2023.
+tiff("NDVICentrale2023.tiff")
+plot(NDVICentrale2023, col=Palette1)
+dev.off()
+
+# Esportazione differenza tra le annate 1987 e 2023.
 DifferenzaDVICentrale = DVICentrale1987 - DVICentrale2023
+tiff("DifferenzaDVICentrale.tiff")
 plot(DifferenzaDVICentrale, col=Palette1)
+dev.off()
 
 # Sezione Est: DVI, NDVI e differenze per gli stack 1987 e 2023.
 
 DVIEst1987 = StackEst1987[[4]] - StackEst1987[[3]]
 NDVIEst1987 = DVIEst1987 / (StackEst1987[[4]] +
                             + StackEst1987[[3]])
+
+# Esportazione del file raffigurante NDVI del 1987.
+tiff("NDVIEst1987.tiff")
 plot(NDVIEst1987, col=Palette1)
+dev.off()
 
 DVIEst2023 = StackEst2023[[4]] - StackEst2023[[3]]
 NDVIEst2023 = DVIEst2023 / (StackEst2023[[4]] +
                             + StackEst2023[[3]])
-plot(NDVIEst2023, col=Palette1)
 
-# Plot differenza tra le annate 1987 e 2023 con Palette1:
+# Esportazione del file raffigurante NDVI del 2023.
+tiff("NDVIEst2023.tiff")
+plot(NDVIEst2023, col=Palette1)
+dev.off()
+
+# Esportazione differenza tra le annate 1987 e 2023.
 DifferenzaDVIEst = DVIEst1987 - DVIEst2023
+tiff("DifferenzaDVIEst.tiff")
 plot(DifferenzaDVIEst, col=Palette1)
+dev.off()
 
 # SEZIONE 4) Esportazione sistematica mappe (.tiff).
 
@@ -288,6 +318,11 @@ Totale = ncell(Ovest1987Class)
 Percentuali = Frequenze * 100 / Totale
 Percentuali
 
+# Esportazione immagine della classificazione del 1987.
+tiff("Ovest1987Class.tiff")
+plot(Ovest1987Class, col=Palette2)
+dev.off()
+
 Ovest1996 <- brick("StackOvest1996Cut.tiff")
 SingleValuesOvest1996 <- getValues(Ovest1996)
 kclusterOvest1996 <- kmeans(SingleValuesOvest1996, centers = 2)
@@ -328,6 +363,11 @@ Totale = ncell(Ovest2023Class)
 Percentuali = Frequenze * 100 / Totale
 Percentuali
 
+# Esportazione immagine della classificazione del 2023.
+tiff("Ovest2023Class.tiff")
+plot(Ovest2023Class, col=Palette2)
+dev.off()
+
 # Sezione Centrale: Classificazione per ogni anno e calcolo percentuali.
 
 Centrale1987 <- brick("StackCentrale1987Cut.tiff")
@@ -339,6 +379,11 @@ Frequenze <- freq(Centrale1987Class)
 Totale = ncell(Centrale1987Class)
 Percentuali = Frequenze * 100 / Totale
 Percentuali
+
+# Esportazione immagine della classificazione del 1987.
+tiff("Centrale1987Class.tiff")
+plot(Centrale1987Class, col=Palette2)
+dev.off()
 
 Centrale1996 <- brick("StackCentrale1996Cut.tiff")
 SingleValuesCentrale1996 <- getValues(Centrale1996)
@@ -380,6 +425,11 @@ Totale = ncell(Centrale2023Class)
 Percentuali = Frequenze * 100 / Totale
 Percentuali
 
+# Esportazione immagine della classificazione del 2023.
+tiff("Centrale2023Class.tiff")
+plot(Centrale2023Class, col=Palette2)
+dev.off()
+
 # Sezione Est: Classificazione per ogni anno e calcolo percentuali.
 
 Est1987 <- brick("StackEst1987Cut.tiff")
@@ -391,6 +441,11 @@ Frequenze <- freq(Est1987Class)
 Totale = ncell(Est1987Class)
 Percentuali = Frequenze * 100 / Totale
 Percentuali
+
+# Esportazione immagine della classificazione del 1987.
+tiff("Est1987Class.tiff")
+plot(Est1987Class, col=Palette2)
+dev.off()
 
 Est1996 <- brick("StackEst1996Cut.tiff")
 SingleValuesEst1996 <- getValues(Est1996)
@@ -431,6 +486,11 @@ Frequenze <- freq(Est2023Class)
 Totale = ncell(Est2023Class)
 Percentuali = Frequenze * 100 / Totale
 Percentuali
+
+# Esportazione immagine della classificazione del 2023.
+tiff("Est2023Class.tiff")
+plot(Est2023Class, col=Palette2)
+dev.off()
 
 # SEZIONE 6) Costruzione del dataframe sintetico per ogni zona.
 
