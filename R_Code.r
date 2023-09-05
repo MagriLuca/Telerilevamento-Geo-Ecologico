@@ -1,4 +1,4 @@
-W1987 <- brick("StackW1987Cut.tiff")
-SingleValuesW1987 <- getValues(W1987)
-kclusterW1987 <- kmeans(SingleValuesW1987, centers = 2)
-W1987Class <- setValues(W1987[[1]], kclusterW1987$cluster)
+plot(W1987Class, col=Palette2)
+Frequenze <- freq(W1987Class)
+Totale = ncell(W1987Class)
+Percentuali = Frequenze * 100 / Totale
