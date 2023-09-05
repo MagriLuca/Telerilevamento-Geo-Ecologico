@@ -1,4 +1,4 @@
-# SEZIONE 1) Introduzione a dati ed obiettivi del codic
+# SEZIONE 1) Introduzione a dati ed obiettivi del codice
 
 # Questo è il codice R adoperato per il progetto d'esame:
 # Esso è ricco di commenti e chiarimenti su tutte le azioni.
